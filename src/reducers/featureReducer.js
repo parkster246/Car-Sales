@@ -25,14 +25,10 @@ export const initialState = {
           additionalPrice: state.additionalPrice + action.payload.price,
           car: {
             ...state.car,
+            price: state.car.price += action.payload.price,
             features: [...state.car.features, action.payload],
           },
-          additionalFeatures: state.additionalFeatures.filter((feature) => {
-            if (feature.id === action.payload.id) {
-              return !feature;
-            }
-            return feature;
-          }),
+     
         };
       case REMOVE_FEATURE:
         console.log("Reducer", action.payload);
@@ -41,6 +37,7 @@ export const initialState = {
           additionalPrice: state.additionalPrice - action.payload.price,
           car: {
             ...state.car,
+            price: state.car.price -= action.payload.price,
             features: state.car.features.filter((feature) => {
               if (feature === action.payload) {
                 return !feature;
