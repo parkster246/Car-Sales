@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, {useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux'
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
